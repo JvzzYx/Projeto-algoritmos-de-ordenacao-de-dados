@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/CMakeFiles/faker-cxx-populate"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/CMakeFiles/faker-cxx-populate.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/CMakeFiles/faker-cxx-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"faker-cxx-populate"
+		],
+		"name" : "faker-cxx-populate"
+	}
+}

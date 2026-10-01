@@ -1,0 +1,3 @@
+C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/CMakeFiles/faker-cxx-populate.dir
+C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-subbuild/CMakeFiles/rebuild_cache.dir

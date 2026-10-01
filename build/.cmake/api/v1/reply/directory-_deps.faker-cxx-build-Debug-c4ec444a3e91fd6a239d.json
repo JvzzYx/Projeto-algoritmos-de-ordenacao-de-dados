@@ -1,0 +1,19 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/faker-cxx-build",
+		"source" : "C:/Users/ferna/Documents/Caline/GitHub/APS/Projeto-algoritmos-de-ordenacao-de-dados/build/_deps/faker-cxx-src"
+	}
+}
