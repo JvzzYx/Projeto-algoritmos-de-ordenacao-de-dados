@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.4.2/CMakeSystem.cmake"
   "CMakeLists.txt"
   "faker-cxx-populate-prefix/tmp/faker-cxx-populate-mkdirs.cmake"
-  "C:/mingw64/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake"
   "C:/mingw64/share/cmake-4.4/Modules/CMakeGenericSystem.cmake"
   "C:/mingw64/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake"
-  "C:/mingw64/share/cmake-4.4/Modules/CMakeSystem.cmake.in"
   "C:/mingw64/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/mingw64/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake"
   "C:/mingw64/share/cmake-4.4/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.4.2/CMakeSystem.cmake"
   "faker-cxx-populate-prefix/tmp/faker-cxx-populate-mkdirs.cmake"
   "faker-cxx-populate-prefix/tmp/faker-cxx-populate-gitclone.cmake"
   "faker-cxx-populate-prefix/src/faker-cxx-populate-stamp/faker-cxx-populate-gitinfo.txt"
