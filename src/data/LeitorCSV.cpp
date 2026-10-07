@@ -1,48 +1,38 @@
-#include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include <string>
-#include "../modelo/imagens.hpp" // Ajusta o nome do cabeçalho do modelo se necessário
+#include <iostream>
 
-class LeitorCSV {
-public:
-    static std::vector<Imagem> ler(const std::string& caminho) {
-        std::vector<Imagem> imagens;
-        std::ifstream ficheiro(caminho);
+std::vector<Imagem> LeitorCSV::ler(const std::string& caminhoFicheiro) {
+    std::vector<Imagem> lista;
+    std::ifstream ficheiro(caminhoFicheiro);
 
-        if (!ficheiro.is_open()) {
-            std::cerr << "Erro ao abrir o ficheiro CSV em: " << caminho << std::endl;
-            return imagens;
-        }
+    if (!ficheiro.is_open()) {
+        std::cerr << "Erro ao abrir o ficheiro: " << caminhoFicheiro << std::endl;
+        return lista;
+    }
 
-        std::string linha;
-        // Ignora a primeira linha (cabeçalho: id,nome,tamanho,largura,altura)
-        std::getline(ficheiro, linha);
+    std::string linha;
+    // Ignorar a primeira linha (cabeçalho do CSV) se existir
+    std::getline(ficheiro, linha);
 
-        while (std::getline(ficheiro, linha)) {
-            if (linha.empty()) continue;
+    while (std::getline(ficheiro, linha)) {
+        std::stringstream ss(linha);
+        std::string nome, strTamanho, strLargura, strAltura;
 
-            std::stringstream ss(linha);
-            std::string strId, nome, strTamanho, strLargura, strAltura;
+        // Assumindo formato CSV: nome,tamanho,largura,altura
+        if (std::getline(ss, nome, ',') &&
+            std::getline(ss, strTamanho, ',') &&
+            std::getline(ss, strLargura, ',') &&
+            std::getline(ss, strAltura, ',')) {
 
-            // Separa os dados pela vírgula
-            std::getline(ss, strId, ',');
-            std::getline(ss, nome, ',');
-            std::getline(ss, strTamanho, ',');
-            std::getline(ss, strLargura, ',');
-            std::getline(ss, strAltura, ',');
-
-            int id = std::stoi(strId);
             double tamanho = std::stod(strTamanho);
             int largura = std::stoi(strLargura);
             int altura = std::stoi(strAltura);
 
-            // Adiciona o objeto à lista
-            imagens.emplace_back(id, nome, tamanho, largura, altura);
+            lista.push_back(Imagem(nome, tamanho, largura, altura));
         }
-
-        ficheiro.close();
-        return imagens;
     }
-};
+
+    ficheiro.close();
+    return lista;
+}

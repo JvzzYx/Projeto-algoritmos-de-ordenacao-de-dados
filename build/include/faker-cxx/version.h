@@ -1,6 +1,0 @@
-#pragma once
-
-#define FAKER_CXX_VERSION_MAJOR 4
-#define FAKER_CXX_VERSION_MINOR 4
-#define FAKER_CXX_VERSION_PATCH 1
-#define FAKER_CXX_VERSION "4.4.1"

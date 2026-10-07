@@ -1,59 +1,32 @@
 #include <iostream>
+#include <vector> 
+#include <utility> 
 using namespace std;
 
-void quickSort(int vetor[], int inicio, int fim)
-{
-    int i = inicio;
-    int j = fim;
+int particionar(vector<int>& dados, int inicio, int fim) {
+    int pivo = dados[fim]; // Ultimo elemento como pivô
+    int i = inicio - 1;
 
-    int pivo = vetor[(inicio + fim) / 2];
-
-    while (i <= j)
-    {
-        while (vetor[i] < pivo)
-        {
+    for (int j = inicio; j < fim; j++) {
+        if (dados[j] <= pivo) {
             i++;
-        }
-
-        while (vetor[j] > pivo)
-        {
-            j--;
-        }
-
-        if (i <= j)
-        {
-            int temp = vetor[i];
-            vetor[i] = vetor[j];
-            vetor[j] = temp;
-
-            i++;
-            j--;
+            swap(dados[i], dados[j]);
         }
     }
+    swap(dados[i + 1], dados[fim]);
+    return i + 1;
+}
+void quickSortAuxiliar(vector<int>& dados, int inicio, int fim) {
+    if (inicio < fim) {
+        int pivoIndice = particionar(dados, inicio, fim);
 
-    if (inicio < j)
-    {
-        quickSort(vetor, inicio, j);
-    }
-
-    if (i < fim)
-    {
-        quickSort(vetor, i, fim);
+        // Ordena as duas parte
+        quickSortAuxiliar(dados, inicio, pivoIndice - 1);
+        quickSortAuxiliar(dados, pivoIndice + 1, fim);
     }
 }
-
-int main()
-{
-    int vetor[] = {8, 3, 7, 4, 2, 9, 1, 5};
-
-    int tamanho = 8;
-
-    quickSort(vetor, 0, tamanho - 1);
-
-    for (int i = 0; i < tamanho; i++)
-    {
-        cout << vetor[i] << " ";
+void quickSort(vector<int>& dados) {
+    if (!dados.empty()) {
+        quickSortAuxiliar(dados, 0, dados.size() - 1);
     }
-
-    return 0;
 }
