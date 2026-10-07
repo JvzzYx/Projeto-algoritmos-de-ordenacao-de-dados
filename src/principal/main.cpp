@@ -2,46 +2,109 @@
 #include <vector>
 #include <string>
 
-// Inclusão das classes
-#include "../modelo/imagens.h"
-#include "../data/LeitorTXT.h"
-#include "../algoritmos/BubbleSort.h"
-#include "../algoritmos/InsertionSort.h"
-#include "../algoritmos/QuickSort.h"
-#include "../desempenho/desempenho.h"
-#include "interface.h"
-
 using namespace std;
 
+// Chamando os 3 algoritmos de ordenacao
+void bubbleSort(vector<int>& dados);
+void insertionSort(vector<int>& dados);
+void quickSort(vector<int>& dados);
+
+// LeitorTXT.cpp
+vector<int> lerTXT(const string& caminhoArquivo);
+
 int main() {
-    // Caminho para o ficheiro CSV
-    string caminhoTXT = "../dados/imagens.txt";
 
-    vector<Imagem> listaImagens = LeitorTXT::ler(caminhoTXT);
+    // Lendo arquivo de dados txt e armazenando os dados em um vetor
+    vector<int> dados = lerTXT("../dados/dados.txt");
 
-    if (listaImagens.empty()) {
-        cout << "Nenhum dado carregado." << endl;
-        return 1;
+    // Verifica se os dados foram carregados
+    if (dados.empty()) {
+        cout << "Nenhum dado foi carregado." << endl;
+        return 0;
     }
 
-    cout << "Foram carregadas " << listaImagens.size() << " imagens do ficheiro TXT." << endl;
+    cout << "Quantidade de dados carregados: "
+         << dados.size()
+         << endl;
 
-    // Cópias algoritmos separadamente
-    vector<Imagem> dadosBubble = listaImagens;
-    vector<Imagem> dadosInsertion = listaImagens;
-    vector<Imagem> dadosQuick = listaImagens;
+    int opcao;
 
-    // Execução e medição do Bubble Sort
-    cout << "A executar Bubble Sort..." << endl;
-    bubbleSort(dadosBubble);
+    do {
 
-    // Execução e medição do Insertion Sort
-    cout << "A executar Insertion Sort..." << endl;
-    insertionSort(dadosInsertion);
+        cout << "\n==============================" << endl;
+        cout << "   ALGORITMOS DE ORDENACAO" << endl;
+        cout << "==============================" << endl;
 
-    // Execução e medição do Quick Sort
-    cout << "A executar Quick Sort..." << endl;
-    quickSort(dadosQuick);
+        cout << "1 - Bubble Sort" << endl;
+        cout << "2 - Insertion Sort" << endl;
+        cout << "3 - Quick Sort" << endl;
+        cout << "0 - Sair" << endl;
+
+        cout << "\nEscolha uma opcao: ";
+        cin >> opcao;
+
+        // Faz uma copia dos dados originais
+        vector<int> dadosOrdenados = dados;
+
+        switch (opcao) {
+
+            case 1:
+
+                cout << "\nExecutando Bubble Sort..." << endl;
+
+                bubbleSort(dadosOrdenados);
+
+                break;
+
+            case 2:
+
+                cout << "\nExecutando Insertion Sort..." << endl;
+
+                insertionSort(dadosOrdenados);
+
+                break;
+
+            case 3:
+
+                cout << "\nExecutando Quick Sort..." << endl;
+
+                quickSort(dadosOrdenados);
+
+                break;
+
+            case 0:
+
+                cout << "\nPrograma encerrado." << endl;
+
+                break;
+
+            default:
+
+                cout << "\nOpcao invalida!" << endl;
+
+                continue;
+        }
+
+        if (opcao != 0) {
+
+            cout << "\nPrimeiros 20 dados ordenados:" << endl;
+
+            int quantidadeMostrar = 20;
+
+            if (dadosOrdenados.size() < 20) {
+                quantidadeMostrar = dadosOrdenados.size();
+            }
+
+            for (int i = 0; i < quantidadeMostrar; i++) {
+
+                cout << dadosOrdenados[i] << " ";
+
+            }
+
+            cout << endl;
+        }
+
+    } while (opcao != 0);
 
     return 0;
 }
