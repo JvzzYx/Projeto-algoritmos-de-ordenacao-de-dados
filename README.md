@@ -1,2 +1,2 @@
 # Projeto-algoritmos-de-ordenacao-de-dados
-Projeto desenvolvido em grupo para Faculdade
+Projeto desenvolvido em grupo para Faculdade UNIP

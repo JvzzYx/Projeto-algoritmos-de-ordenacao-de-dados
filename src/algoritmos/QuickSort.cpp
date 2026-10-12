@@ -1,59 +1,122 @@
-#include <iostream>
+#include <vector>
+#include <utility>
+#include "../modelo/imagens.cpp"
 using namespace std;
 
-void quickSort(int vetor[], int inicio, int fim)
-{
-    int i = inicio;
-    int j = fim;
+bool menorQue(
+    const Imagem& a,
+    const Imagem& b,
+    int criterio
+) {
+    if (criterio == 1) {
+        return a.getId() < b.getId();
+    }
+    if (criterio == 2) {
+        return a.getNome() < b.getNome();
+    }
+    if (criterio == 3) {
+        return a.getTamanho() < b.getTamanho();
+    }
+    if (criterio == 4) {
+        return a.getLargura() < b.getLargura();
+    }
+    if (criterio == 5) {
+        return a.getAltura() < b.getAltura();
+    }
+    return false;
+}
+bool maiorQue(
+    const Imagem& a,
+    const Imagem& b,
+    int criterio
+) {
+    if (criterio == 1) {
+        return a.getId() > b.getId();
+    }
+    if (criterio == 2) {
+        return a.getNome() > b.getNome();
+    }
+    if (criterio == 3) {
+        return a.getTamanho() > b.getTamanho();
+    }
+    if (criterio == 4) {
+        return a.getLargura() > b.getLargura();
+    }
+    if (criterio == 5) {
+        return a.getAltura() > b.getAltura();
+    }
+    return false;
+}
+void quickSortAuxiliar(
+    vector<Imagem>& dados,
+    int esquerda,
+    int direita,
+    int criterio
+) {
+    int i = esquerda;
+    int j = direita;
 
-    int pivo = vetor[(inicio + fim) / 2];
-
-    while (i <= j)
-    {
-        while (vetor[i] < pivo)
-        {
+    Imagem pivo =
+        dados[
+            (esquerda + direita) / 2
+        ];
+    while (i <= j) {
+        while (
+            menorQue(
+                dados[i],
+                pivo,
+                criterio
+            )
+        ) {
             i++;
         }
-
-        while (vetor[j] > pivo)
-        {
+        while (
+            maiorQue(
+                dados[j],
+                pivo,
+                criterio
+            )
+        ) {
             j--;
         }
-
-        if (i <= j)
-        {
-            int temp = vetor[i];
-            vetor[i] = vetor[j];
-            vetor[j] = temp;
-
+        if (i <= j) {
+            swap(
+                dados[i],
+                dados[j]
+            );
             i++;
             j--;
         }
     }
+    if (esquerda < j) {
 
-    if (inicio < j)
-    {
-        quickSort(vetor, inicio, j);
+        quickSortAuxiliar(
+            dados,
+            esquerda,
+            j,
+            criterio
+        );
     }
-
-    if (i < fim)
-    {
-        quickSort(vetor, i, fim);
+    if (i < direita) {
+        quickSortAuxiliar(
+            dados,
+            i,
+            direita,
+            criterio
+        );
     }
 }
-
-int main()
-{
-    int vetor[] = {8, 3, 7, 4, 2, 9, 1, 5};
-
-    int tamanho = 8;
-
-    quickSort(vetor, 0, tamanho - 1);
-
-    for (int i = 0; i < tamanho; i++)
-    {
-        cout << vetor[i] << " ";
+void quickSort(
+    vector<Imagem>& dados,
+    int criterio
+) {
+    if (dados.empty()) {
+        return;
     }
-
-    return 0;
+    quickSortAuxiliar(
+        dados,
+        0,
+        static_cast<int>(dados.size()) - 1,
+        criterio
+    );
 }
