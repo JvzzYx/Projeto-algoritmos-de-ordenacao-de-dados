@@ -102,7 +102,7 @@ int main() {
     cout << "========================================" << endl;
     cout << "1 - Arquivo interno" << endl;
     cout << "2 - Arquivo externo" << endl;
-    cout << "3 - Amostrador aleatorio" << endl;
+    cout << "3 - Dados aleatorio" << endl;
     cout << "0 - Sair" << endl;
     cout << "\nEscolha: ";
     cin >> origem;
