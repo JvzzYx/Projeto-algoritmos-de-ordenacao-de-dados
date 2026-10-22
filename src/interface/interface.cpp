@@ -1,15 +1,18 @@
 #include <windows.h>
 #include <commdlg.h>
 #include <cstdlib>
+<<<<<<< HEAD
 #include <cstring>
 #include <iomanip>
 #include <sstream>
 #include <string>
 #include <vector>
 
+=======
+>>>>>>> 4b171a0 (Atualizando README)
 #include "../modelo/imagens.cpp"
-
 using namespace std;
+<<<<<<< HEAD
 
 string caminhoArquivoExterno = "";
 
@@ -144,12 +147,68 @@ private:
   static LRESULT CALLBACK WindowProcedure(HWND janela, UINT mensagem,
                                           WPARAM wParam, LPARAM lParam);
 
+=======
+// =====================================
+// FUNCOES DOS OUTROS ARQUIVOS
+// =====================================
+vector<Imagem> lerArquivoInterno();
+vector<Imagem> lerArquivoExterno();
+vector<Imagem> selecionarAleatorios(
+    const vector<Imagem>& dados,
+    int quantidade
+);
+double medirBubble(
+    vector<Imagem>& dados,
+    int criterio
+);
+double medirInsertion(
+    vector<Imagem>& dados,
+    int criterio
+);
+double medirQuick(
+    vector<Imagem>& dados,
+    int criterio
+);
+// =====================================
+// IDs DOS COMPONENTES
+// =====================================
+#define ID_ORIGEM       101
+#define ID_QUANTIDADE   102
+#define ID_CRITERIO     103
+#define ID_ALGORITMO    104
+#define ID_EXECUTAR     105
+#define ID_RESULTADO    106
+// =====================================
+// CLASSE INTERFACE
+// =====================================
+class Interface {
+private:
+    HWND comboOrigem;
+    HWND campoQuantidade;
+    HWND comboCriterio;
+    HWND comboAlgoritmo;
+    HWND campoResultado;
+    static Interface* instancia;
+    static LRESULT CALLBACK WindowProcedure(
+        HWND janela,
+        UINT mensagem,
+        WPARAM wParam,
+        LPARAM lParam
+    );
+    void criarComponentes(
+        HWND janela
+    );
+    void executarPrograma(
+        HWND janela
+    );
+>>>>>>> 4b171a0 (Atualizando README)
 public:
   Interface();
   ~Interface();
 
   int iniciar(HINSTANCE hInstance, int nCmdShow);
 };
+<<<<<<< HEAD
 
 // Instancia estatica para a funcao de callback da janela
 Interface *Interface::instancia = nullptr;
@@ -158,6 +217,15 @@ Interface *Interface::instancia = nullptr;
 // CONSTRUTOR - CONFIGURA CORES E FONTES
 // =======================================================
 
+=======
+// =====================================
+// INSTANCIA DA INTERFACE
+// =====================================
+Interface* Interface::instancia = nullptr;
+// =====================================
+// CONSTRUTOR
+// =====================================
+>>>>>>> 4b171a0 (Atualizando README)
 Interface::Interface() {
   origemSelecionada = 0;
   criterioSelecionado = 0;
@@ -238,6 +306,7 @@ Interface::Interface() {
                   OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY,
                   FIXED_PITCH | FF_MODERN, "Consolas");
 }
+<<<<<<< HEAD
 
 // =======================================================
 // DESTRUTOR - LIBERA OS RECURSOS CRIADOS
@@ -258,6 +327,22 @@ Interface::~Interface() {
     DeleteObject(hFontBotaoExecutar);
   if (hFontTerminal)
     DeleteObject(hFontTerminal);
+=======
+// =====================================
+// PEGA OS PRIMEIROS REGISTROS
+// =====================================
+vector<Imagem> pegarPrimeiros(
+    const vector<Imagem>& dados,
+    int quantidade
+) {
+    if (
+        quantidade >
+        static_cast<int>(dados.size())
+    ) {
+        quantidade =
+            static_cast<int>(dados.size());
+    }
+>>>>>>> 4b171a0 (Atualizando README)
 
   if (hBrushFundo)
     DeleteObject(hBrushFundo);
