@@ -1,6 +1,6 @@
 # Projeto - Algoritmos de Ordenação
 
-Projeto desenvolvido em C++ para a Faculdade UNIP.
+Projeto desenvolvido em C++
 
 O programa realiza a leitura de dados de imagens e permite ordenar os registros utilizando:
 
